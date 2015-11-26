@@ -19,7 +19,6 @@ import java.net.URI;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class})
@@ -66,7 +65,6 @@ public class ApplicationIntegrationTests {
 
     private URI envEndpointUri() {
         final String contextPath = managementServerProperties.getContextPath();
-        assertEquals("/manage", contextPath);
         return builder().port(managementPort)
                         .path(contextPath)
                         .pathSegment("env")
